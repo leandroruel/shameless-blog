@@ -1,5 +1,6 @@
 import Image from "next/image";
 import avatar from "../../public/avatar.jpeg";
+import { configOwner } from "../config/owner";
 
 export const AuthorAvatar = () => {
   return (
@@ -8,7 +9,7 @@ export const AuthorAvatar = () => {
       height={200}
       className="h-20 w-20 rounded-full"
       src={avatar}
-      alt={"Your avatar"}
+      alt={`${configOwner.name} avatar`}
     />
   );
 };

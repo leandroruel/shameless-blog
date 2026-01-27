@@ -1,5 +1,6 @@
 import { getBlogPosts } from "app/blog/utils";
 import { baseUrl } from "app/sitemap";
+import { configOwner } from "app/config/owner";
 
 export async function GET() {
   const allBlogs = await getBlogPosts();
@@ -27,7 +28,7 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-        <title>My Portfolio</title>
+        <title>${configOwner.name}</title>
         <link>${baseUrl}</link>
         <description>This is my portfolio RSS feed</description>
         ${itemsXml}

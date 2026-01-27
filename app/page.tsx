@@ -1,5 +1,6 @@
 import { BlogPosts } from "app/components/posts";
 import { AuthorAvatar } from "./components/author-avatar";
+import { configOwner } from "./config/owner";
 
 export const metadata = {
   title: "home",
@@ -11,12 +12,12 @@ export default function Page() {
     <section>
       <div className="gap-2 flex justify-between">
         <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-          it's me, Iago
+          it's me, {configOwner.displayName}
         </h1>
         <AuthorAvatar />
       </div>
       <p className="mb-4">
-        {`turning coffee into code since 2017, i build software`}
+        {configOwner.bio}
       </p>
       <div className="my-8">
         <BlogPosts />

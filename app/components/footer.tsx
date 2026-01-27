@@ -1,3 +1,5 @@
+import { configOwner } from "../config/owner";
+
 export function ArrowIcon() {
   return (
     <svg
@@ -20,7 +22,7 @@ export default function Footer() {
   return (
     <footer className="mb-16">
       <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} - iago ferreira
+        © {new Date().getFullYear()} - {configOwner.name.toLowerCase()}
       </p>
     </footer>
   );
