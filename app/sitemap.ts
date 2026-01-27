@@ -1,6 +1,7 @@
 import { getBlogPosts } from "app/blog/utils";
+import { configOwner } from "./config/owner";
 
-export const baseUrl = "https://www.iago-ferreira.com/";
+export const baseUrl = configOwner.website;
 
 export default async function sitemap() {
   const blogs = getBlogPosts().map((post) => ({

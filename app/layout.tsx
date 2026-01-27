@@ -6,20 +6,21 @@ import type { Metadata } from "next";
 import Footer from "./components/footer";
 import { Navbar } from "./components/nav";
 import { baseUrl } from "./sitemap";
+import { configOwner } from "./config/owner";
 import "./global.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "iago ferreira",
-    template: "%s | iago ferreira",
+    default: configOwner.name.toLowerCase(),
+    template: `%s | ${configOwner.name.toLowerCase()}`,
   },
   description: "this is my personal website.",
   openGraph: {
-    title: "iago Ferreira",
+    title: configOwner.name,
     description: "this is my website.",
     url: baseUrl,
-    siteName: "iago ferreira",
+    siteName: configOwner.name.toLowerCase(),
     locale: "en_US",
     type: "website",
   },

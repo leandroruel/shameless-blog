@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useId } from "react";
+import { configOwner } from "../config/owner";
 
 export const BlogComments = ({ issueTerm }) => {
   const commentsId = useId();
@@ -10,7 +11,7 @@ export const BlogComments = ({ issueTerm }) => {
     script.setAttribute("src", "https://utteranc.es/client.js");
     script.setAttribute("crossorigin", "anonymous");
     script.setAttribute("async", "true");
-    script.setAttribute("repo", "iagxferreira/blog-comments");
+    script.setAttribute("repo", configOwner.commentsRepo);
     script.setAttribute("issue-term", issueTerm);
     script.setAttribute("theme", "github-dark");
     if (anchor) {

@@ -4,6 +4,7 @@ import { baseUrl } from "app/sitemap";
 import { notFound } from "next/navigation";
 import { BlogComments } from "../../components/blog-comments";
 import { ArrowIcon } from "../../components/footer";
+import { configOwner } from "../../config/owner";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -83,7 +84,7 @@ export default async function Blog({ params }) {
               url: `${baseUrl}/blog/${post.slug}`,
               author: {
                 "@type": "Person",
-                name: "My Portfolio",
+                name: configOwner.name,
               },
             }),
           }}
@@ -117,7 +118,7 @@ export default async function Blog({ params }) {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://www.linkedin.com/in/iagxferreira/"
+            href={configOwner.social.linkedin}
           >
             <ArrowIcon />
             <p className="ml-2 h-7">linkedin</p>
@@ -128,7 +129,7 @@ export default async function Blog({ params }) {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/iagxferreira"
+            href={configOwner.social.github}
           >
             <ArrowIcon />
             <p className="ml-2 h-7">github</p>
